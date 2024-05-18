@@ -11,20 +11,11 @@ describe('<App /> component', () => {
         expect(AppDOM.querySelector('#event-list')).toBeInTheDocument();
     });
 
-    test('render CitySearch', () => {
+    test('renders CitySearch', () => {
         expect(AppDOM.querySelector('#city-search')).toBeInTheDocument();
+    });
+
+    test('renders NumberOfEvents', () => {
+        expect(AppDOM.querySelector('#number-of-events')).toBeInTheDocument();
     });
 });
-
-//Code before adding the beforeEach() function
-/*describe('<App /> component', () => {
-    test('renders list of events', () => {
-        const AppDOM = render(<App />).container.firstChild;
-        expect(AppDOM.querySelector('#event-list')).toBeInTheDocument();
-    });
-
-    test('render CitySearch', () => {
-        const AppDOM = render(<App />).container.firstChild;
-        expect(AppDOM.querySelector('#city-search')).toBeInTheDocument();
-    });
-});*/
