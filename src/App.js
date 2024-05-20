@@ -9,8 +9,8 @@ import './App.css';
 
 const App = () => {
   const [allLocations, setAllLocations] = useState([]);
-  const [events, setEvents] = useState([]);
   const [currentNOE, setCurrentNOE] = useState(32);
+  const [events, setEvents] = useState([]);
   const [currentCity, setCurrentCity] = useState("See all cities");
 
   useEffect(() => {
