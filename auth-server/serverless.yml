@@ -1,4 +1,4 @@
-auservice: auth-server
+service: auth-server
 
 provider:
   name: aws
