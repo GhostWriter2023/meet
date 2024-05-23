@@ -2,6 +2,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
+  background-color: rgb(161, 239, 161);
 }
 
 .App * {
@@ -41,6 +42,10 @@ input[type="number"] {
   position: relative;
 }
 
+#number-of-events {
+  margin-top: 10px; /* Space between city search and number of events */
+}
+
 .suggestions {
   width: 250px;
   position: absolute;
@@ -75,6 +80,7 @@ input[type="number"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
+  background-color: white;
 }
 
 .details-btn {
