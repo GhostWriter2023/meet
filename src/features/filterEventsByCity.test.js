@@ -46,7 +46,7 @@ defineFeature(feature, test => {
           await user.type(citySearchInput, "Berlin");
         });
 
-        then('the user should receive a list of cities (suggestions) that match what they’ve typed', async () => {
+        then('the user should recieve a list of cities (suggestions) that match what they’ve typed', async () => {
             const suggestionListItems = within(CitySearchDOM).queryAllByRole('listitem'); 
             expect(suggestionListItems).toHaveLength(2);
         });
