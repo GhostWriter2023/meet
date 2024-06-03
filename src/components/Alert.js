@@ -3,8 +3,8 @@ import { Component } from 'react';
 class Alert extends Component {
   constructor(props) {
     super(props);
-    this.color = 'rgb(0, 0, 255)'; // blue
-    this.bgColor = 'rgb(220, 220, 255)'; // light blue
+    this.color = null;
+    this.bgColor = null;
   }
 
   getStyle = () => {
@@ -31,5 +31,13 @@ class Alert extends Component {
     );
   }
 }
+
+class InfoAlert extends Alert {
+    constructor(props) {
+      super(props);
+      this.color = 'rgb(0, 0, 255)'; // blue
+      this.bgColor = 'rgb(220, 220, 255)'; // light blue
+    }
+  }
 
 export { InfoAlert };
