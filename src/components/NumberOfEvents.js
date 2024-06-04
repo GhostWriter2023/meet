@@ -5,16 +5,15 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
     const handleInputChanged = (event) => {
         const value = event.target.value;
         console.log("NOE is ", value);
-        let infoText;
-
-        // Check if the value is a number and greater than 0
+        
+        let infoText; // Check if the value is a number and greater than 0
         if (isNaN(value) || value <= 0) {
           infoText = "Only positive numbers are allowed";
-          setErrorAlert(infoText);
         } else {
-          setErrorAlert("");
-          setCurrentNOE(Number(value));
+          infoText = "";
+          setCurrentNOE(value);
         }
+        setErrorAlert(infoText);
     };
 
     return (
