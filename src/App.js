@@ -6,7 +6,7 @@ import CitySearch from './components/CitySearch';
 import NumberOfEvents from './components/NumberOfEvents';
 import EventList from './components/EventList';
 import CityEventsChart from './components/CityEventsChart';
-import EventGenresChart from './components/CityEventsChart';
+import EventGenresChart from './components/EventGenresChart';
 import './App.css';
 
 const App = () => {

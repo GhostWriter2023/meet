@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from 'recharts';
+import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from 'recharts';
 
 const EventGenresChart = ({ events }) => {
     const [data, setData] = useState([]);
     const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
-    const colors = ['#DD0000', '#00DD00', '#0000DD', '#DDDD00', '#DD00DD'];    
+    const colors = ['#DD0000', '#00DD00', '#0000DD', '#FFAC67', '#DD00DD'];    
 
     useEffect(() => {
       setData(getData());
@@ -22,20 +22,21 @@ const EventGenresChart = ({ events }) => {
       return data;
     };   
 
-    const renderCustomizedLabel = ({ cx, cy, midAngle, outerRadius, percent, index }) => {
+    const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
         const RADIAN = Math.PI / 180;
-        const radius = outerRadius;
-        const x = cx + radius * Math.cos(-midAngle * RADIAN) * 1.07;
-        const y = cy + radius * Math.sin(-midAngle * RADIAN) * 1.07;
+        const radius = innerRadius + (outerRadius - innerRadius)  * 0.66;
+        const x = cx + radius * Math.cos(-midAngle * RADIAN);
+        const y = cy + radius * Math.sin(-midAngle * RADIAN);
         return percent ? (
           <text
             x={x}
             y={y}
-            fill="#8884d8"
+            fill="#4c4c4c"
             textAnchor={x > cx ? 'start' : 'end'}
             dominantBaseline="central"
+            fontSize="20"
           >
-            {`${genres[index]} ${(percent * 100).toFixed(0)}%`}
+            {`${(percent * 100).toFixed(0)}%`}
           </text>
         ) : null;
     };
@@ -46,10 +47,10 @@ const EventGenresChart = ({ events }) => {
           <Pie
             data={data}
             dataKey="value"
-            fill="#8884d8"
+            fill="#4c4c4c"
             labelLine={false}
             label={renderCustomizedLabel}
-            outerRadius={130}           
+            outerRadius={150}           
           >
            {
               data.map((entry, index) => (
@@ -57,7 +58,7 @@ const EventGenresChart = ({ events }) => {
                 ))
               }
           </Pie>
-          <legend />
+          <Legend height={36} />
         </PieChart>
       </ResponsiveContainer>
     );
